@@ -5,7 +5,7 @@ html, body {
     background-color: yellow;
 }
 
-.posion_test {
+.position_test {
 	position: absolute;
 	top: 50%;
 	/* margin-top: -8px */
