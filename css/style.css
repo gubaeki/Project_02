@@ -5,6 +5,12 @@ html, body {
     background-color: yellow;
 }
 
+.posion_test {
+	position: absolute;
+	top: 50%;
+	/* margin-top: -8px */
+}
+
 .container {
     display: grid;
     width: 100%;
