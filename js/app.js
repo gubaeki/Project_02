@@ -77,12 +77,14 @@
             $('.scrollup').fadeOut();
         }
 
+        /*
         if ($(this).scrollTop() > 130) {
             $('.navbar').addClass('navbar-fixed-top animated fadeInDown');
         } else {
             $('.navbar').removeClass('navbar-fixed-top animated fadeInDown');
         }
-
+        */
+     
         // Get container scroll position
         var fromTop = $(this).scrollTop() + topMenuHeight + 10;
 
