@@ -411,3 +411,21 @@ function initializeMap() {
 
     infowindow.open(map, marker);
 }
+
+
+//남성 & 여성 선택
+function selectSex(content) {
+  var male = document.getElementById("male");
+  var female = document.getElementById("female");
+
+  // 내용 숨김
+  male.style.display = "none";
+  female.style.display = "none";
+
+  // 선택한 내용 보이기
+  if (content === "A") {
+    contentA.style.display = "block";
+  } else if (content === "B") {
+    contentB.style.display = "block";
+  }
+}
