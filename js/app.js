@@ -417,11 +417,12 @@ function initializeMap() {
 function selectSex(content) {
   var male = document.getElementById("male");
   var female = document.getElementById("female");
- var test = document.getElementById("test");
+  //var test = document.getElementById("test");
+ 
   // 내용 숨김
   male.style.display = "none";
   female.style.display = "none";
-  test.style.display = "none";
+  //test.style.display = "none";
 
   // 선택한 내용 보이기
   if (content === "male") {
