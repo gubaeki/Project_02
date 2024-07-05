@@ -423,9 +423,9 @@ function selectSex(content) {
   female.style.display = "none";
 
   // 선택한 내용 보이기
-  if (content === "A") {
-    contentA.style.display = "block";
-  } else if (content === "B") {
-    contentB.style.display = "block";
+  if (content === "male") {
+    male.style.display = "block";
+  } else if (content === "female") {
+    female.style.display = "block";
   }
 }
