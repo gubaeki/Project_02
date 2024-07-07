@@ -44,7 +44,7 @@
                     <h1>그녀는 어떤<br>모습이었나요?</h1>
                     <p>기억나는 특징을 적어주세요!<br>당신의 이상형을 보여드립니다!</p>
                 </div>
-                <h3>Skills</h3>
+                <h3>Styles</h3>
                 <div class="row-fluid">
                     <div class="span6">
                         <ul class="skills">
@@ -67,7 +67,7 @@
                         </ul>
                     </div>
                     <div class="title">
-                        <a href="#first-person"> <button class="button button-sp" onclick="pick()">선택완료</button> </a>
+                        <a href="#first-person"> <button class="button button-sp" onclick="pick_with_loading()">선택완료</button> </a>
                 </div>
                     
                 </div>
@@ -75,7 +75,7 @@
                 <div class="row-fluid team" id="result_table" style="display: none;">
                     <div class="span4" id="first-person">
                         <div class="thumbnail">
-                            <img src="images/person/female1.png" alt="female1">
+                            <img id="female_thumbnailImg" src="images/person/female1.png"  alt="female">
                             <h3>이름</h3>
                             <ul class="social">
                                 <li>
@@ -100,7 +100,7 @@
 
                 <div class="title" id="pick_again_table" style="display: none;">
                     <h1>상대를 찾으셨나요?</h1>
-                    <a href="#first-person"><button class="button button-sp" onclick="pick_again()">다시 그리기</button> </a>
+                    <a href="#first-person"><button class="button button-sp" onclick="pickagain_with_loading()">다시 그리기</button> </a>
                 </div>
                 
                 <div class="about-text centered">
