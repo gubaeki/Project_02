@@ -413,7 +413,16 @@ function initializeMap() {
 }
 
 
-// 선택완료 버튼 클릭
+    /************************
+    결과 보여주기
+        - 임시 이미지 3개 지정
+        - 현재는 정해진 순서에 따라 결과를 보여주도록 했지만 추후 랜덤으로 결과를 표출하도록 변경 예정
+        - DB에 저장된 이미지가 아닌, 실제 AI 실시간 생성 이미지 구현이 가능한지 확인 필요 
+        - 이미지 경로 등을 '절대경로'가 아닌 '상대경로'로 구현 필요 ex) var imgsrc = "https://gubaeki.~" 
+    *************************/
+
+
+// "선택완료" 버튼 클릭
 function pick(){
     var result_table = document.getElementById('result_table');
     var pick_again_table = document.getElementById('pick_again_table');
@@ -425,4 +434,89 @@ function pick(){
         pick_again_table.style.display = 'block';
       }
 }
+
+// "다시그리기" 버튼 클릭
+function pick_again(){
+    var male_thumbnailImg = document.getElementById('male_thumbnailImg');
+    var female_thumbnailImg = document.getElementById('female_thumbnailImg');
+
+
+   if (male_thumbnailImg != null){
+        if(male_thumbnailImg.src === 'https://gubaeki.github.io/Project_02/images/person/male1.png') {
+            male_thumbnailImg.src = 'https://gubaeki.github.io/Project_02/images/person/male2.png';
+            console.log("1");
+        }else if(male_thumbnailImg.src === 'https://gubaeki.github.io/Project_02/images/person/male2.png'){
+            male_thumbnailImg.src = 'https://gubaeki.github.io/Project_02/images/person/male3.png';
+            console.log("2");
+        }else{
+            male_thumbnailImg.src = 'https://gubaeki.github.io/Project_02/images/person/male1.png';
+            console.log("3");
+        }
+   }else{
+        if(female_thumbnailImg.src === 'https://gubaeki.github.io/Project_02/images/person/female1.png') {
+            female_thumbnailImg.src = 'https://gubaeki.github.io/Project_02/images/person/female2.png';
+        }else if(female_thumbnailImg.src === 'https://gubaeki.github.io/Project_02/images/person/female2.png'){
+            female_thumbnailImg.src = 'https://gubaeki.github.io/Project_02/images/person/female3.png';
+        }else{
+            female_thumbnailImg.src = 'https://gubaeki.github.io/Project_02/images/person/female1.png';
+        }
+    }
+}
+
+
+
+    /************************
+    로딩이미지 표출
+    *************************/
+
+function pick_with_loading(){
+    LoadingWithMask();
+    setTimeout("closeLoadingWithMask()", 1500);
+    setTimeout("pick()", 1500); // 로딩이미지 1.5초간 표출
+}
+function pickagain_with_loading(){
+    LoadingWithMask();
+    setTimeout("closeLoadingWithMask()", 1500);
+    setTimeout("pick_again()", 1500); // 로딩이미지 1.5초간 표출
+}
+ 
+function LoadingWithMask() {
+    //화면의 높이와 너비를 구합니다.
+    var maskHeight = $(document).height();
+    var maskWidth = window.document.body.clientWidth;
+    var centerHeight =$(document).height() /2 - 15;
+    var centerWidth =  window.document.body.clientWidth / 2 - 15;
+
+    //화면에 출력할 마스크를 설정해줍니다.
+    var mask = "<div id='mask' style='position:absolute; z-index:4000; background-color:#000000; display:none; left:0; top:0;'></div>";
+    var loadingImg = '';
+    
+    loadingImg += "<div id='loadingImg'>";
+    loadingImg += " <img src='images/fs.spinner.gif' style='position: absolute; z-index:5000; display: block; left:"+centerWidth+"px; top:"+centerHeight+"px; margin: 0px auto;'/>";
+    loadingImg += "</div>";
+
+    //화면에 레이어 추가
+    $('body')
+        .append(mask)
+        .append(loadingImg)
+    
+    //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채웁니다.
+    $('#mask').css({
+        'width' : maskWidth,
+        'height': maskHeight,
+        'opacity' : '0.3'
+    });
+
+    //마스크 표시
+    $('#mask').show();
+
+    //로딩중 이미지 표시
+    $('#loadingImg').show();
+}
+
+function closeLoadingWithMask() {
+    $('#mask, #loadingImg').hide();
+    $('#mask, #loadingImg').empty();
+}
+
 
