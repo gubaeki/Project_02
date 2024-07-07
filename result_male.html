@@ -67,62 +67,16 @@
                         </ul>
                     </div>
                     <div class="title">
-                        <a href="#first-person"> <button class="button button-sp">선택완료</button> </a>
+                        <a href="#first-person"> <button class="button button-sp" onclick="pick()">선택완료</button> </a>
                 </div>
                     
                 </div>
                 
-                <div class="row-fluid team">
+                <div class="row-fluid team" id="result_table" style="display: none;">
                     <div class="span4" id="first-person">
                         <div class="thumbnail">
-                            <img src="images/Team1.png" alt="team 1">
-                            <h3>홍길동</h3>
-                            <ul class="social">
-                                <li>
-                                    <a href="">
-                                        <span class="icon-facebook-circled"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span class="icon-twitter-circled"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span class="icon-linkedin-circled"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="span4" id="second-person">
-                        <div class="thumbnail">
-                            <img src="images/Team2.png" alt="team 1">
-                            <h3>선우재덕</h3>
-                            <ul class="social">
-                                <li>
-                                    <a href="">
-                                        <span class="icon-facebook-circled"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span class="icon-twitter-circled"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <span class="icon-linkedin-circled"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="span4" id="third-person">
-                        <div class="thumbnail">
-                            <img src="images/Team3.png" alt="team 1">
-                            <h3>전재준</h3>
+                            <img src="images/person/male1.png" alt="male1">
+                            <h3>이름</h3>
                             <ul class="social">
                                 <li>
                                     <a href="">
@@ -144,9 +98,9 @@
                     </div>
                 </div>
 
-                <div class="title">
+                <div class="title" id="pick_again_table" style="display: none;">
                     <h1>상대를 찾으셨나요?</h1>
-                    <a href="#first-person"><button class="button button-sp">다시 그리기</button> </a>
+                    <a href="#first-person"><button class="button button-sp" onclick="pick_again()">다시 그리기</button> </a>
                 </div>
                 
                 <div class="about-text centered">
