@@ -411,3 +411,18 @@ function initializeMap() {
 
     infowindow.open(map, marker);
 }
+
+
+// 선택완료 버튼 클릭
+function pick(){
+    var result_table = document.getElementById('result_table');
+    var pick_again_table = document.getElementById('pick_again_table');
+    if(result_table.style.display === 'none') {
+        result_table.style.display = 'block';
+        pick_again_table.style.display = 'block';
+      }else {
+        result_table.style.display = 'block';
+        pick_again_table.style.display = 'block';
+      }
+}
+
